@@ -103,4 +103,28 @@ CREATE TABLE bronze.erp_px_cat_g1v2(
 
 GO
 
+IF OBJECT_ID('bronze.metadata_control', 'U') IS NOT NULL
+    DROP TABLE bronze.metadata_control;
 
+
+GO
+
+-- create metdata control table
+CREATE TABLE bronze.metadata_control (
+    file_prefix VARCHAR(100) NOT NULL,
+    target_table VARCHAR(100) NOT NULL,
+    source_folder VARCHAR(100) NOT NULL
+);
+
+Go
+
+-- Populate it with just the prefix and the exact target table name
+INSERT INTO bronze.metadata_control (file_prefix, target_table, source_folder) VALUES 
+('cust_info', 'crm_customer_info', 'source_crm'),
+('prd_info', 'crm_product_info', 'source_crm'),
+('sales_details', 'crm_sales_details', 'source_crm'),
+('CUST_AZ12', 'erp_customer_az12', 'source_erp'),
+('LOC_A101', 'erp_loc_a101', 'source_erp'),
+('PX_CAT_G1V', 'erp_px_cat_g1v2', 'source_erp');
+
+Go
