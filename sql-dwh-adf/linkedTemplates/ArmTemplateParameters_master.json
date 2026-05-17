@@ -1,0 +1,39 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "sql-dwh-adf"
+		},
+		"Ls_azure_sql_bronze_password": {
+			"value": ""
+		},
+		"Ls_blob_storage_connectionString": {
+			"value": ""
+		},
+		"Ls_azure_sql_bronze_properties_typeProperties_server": {
+			"value": "sqldwh14.database.windows.net"
+		},
+		"Ls_azure_sql_bronze_properties_typeProperties_database": {
+			"value": "sql_data_ware_house"
+		},
+		"Ls_azure_sql_bronze_properties_typeProperties_userName": {
+			"value": "prasad15"
+		},
+		"tr_on_blob_csv_arrival_properties_pl_live_ingest_parameters_Foldername": {
+			"value": "@triggerBody().folderPath"
+		},
+		"tr_on_blob_csv_arrival_properties_pl_live_ingest_parameters_Filename": {
+			"value": "@triggerBody().fileName"
+		},
+		"tr_on_blob_csv_arrival_properties_typeProperties_scope": {
+			"value": "/subscriptions/0bd10967-5ab8-4a0d-a33b-614f58a3e11d/resourceGroups/SQL-DHW-RG/providers/Microsoft.Storage/storageAccounts/sadhingestprod"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
