@@ -1,0 +1,68 @@
+{
+	"name": "Ds_blob_source",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Ls_blob_storage",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"Foldername": {
+				"type": "string"
+			},
+			"Filename": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@dataset().Filename",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@dataset().Foldername",
+					"type": "Expression"
+				},
+				"container": "inbound-landing-zone"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "cst_id",
+				"type": "String"
+			},
+			{
+				"name": "cst_key",
+				"type": "String"
+			},
+			{
+				"name": "cst_firstname",
+				"type": "String"
+			},
+			{
+				"name": "cst_lastname",
+				"type": "String"
+			},
+			{
+				"name": "cst_marital_status",
+				"type": "String"
+			},
+			{
+				"name": "cst_gndr",
+				"type": "String"
+			},
+			{
+				"name": "cst_create_date",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

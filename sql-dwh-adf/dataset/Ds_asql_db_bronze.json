@@ -1,0 +1,25 @@
+{
+	"name": "Ds_asql_db_bronze",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Ls_azure_sql_bronze",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"Tablename": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "bronze",
+			"table": {
+				"value": "@dataset().Tablename",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
