@@ -1,0 +1,15 @@
+{
+	"name": "sql-dwh-adf",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Enabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "b8f831c8-8385-43d0-992d-d7ff8c267ae3",
+		"tenantId": "cb3457c4-d659-40b6-b3f5-4aed848a1a2f"
+	}
+}
