@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "lkp_get_processing_tasks",
+				"name": "lkp_get_processing_taskss",
 				"type": "Lookup",
 				"dependsOn": [],
 				"policy": {
@@ -36,7 +36,7 @@
 				"type": "ForEach",
 				"dependsOn": [
 					{
-						"activity": "lkp_get_processing_tasks",
+						"activity": "lkp_get_processing_taskss",
 						"dependencyConditions": [
 							"Succeeded"
 						]
