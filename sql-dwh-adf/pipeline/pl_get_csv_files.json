@@ -5,6 +5,8 @@
 			{
 				"name": "copy_csv_files",
 				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
@@ -66,10 +68,45 @@
 						}
 					}
 				]
+			},
+			{
+				"name": "get_metadata_files",
+				"type": "GetMetadata",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataset": {
+						"referenceName": "ds_blob_csv",
+						"type": "DatasetReference",
+						"parameters": {
+							"ContainerName": {
+								"value": "@pipeline().globalParameters.ContainerInbound",
+								"type": "Expression"
+							}
+						}
+					},
+					"fieldList": [
+						"lastModified"
+					],
+					"storeSettings": {
+						"type": "AzureBlobStorageReadSettings",
+						"enablePartitionDiscovery": false
+					},
+					"formatSettings": {
+						"type": "DelimitedTextReadSettings"
+					}
+				}
 			}
 		],
 		"folder": {
-			"name": "Medallion-Architecture"
+			"name": "Medallion-Fullload"
 		},
 		"annotations": []
 	}
