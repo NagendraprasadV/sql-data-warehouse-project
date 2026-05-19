@@ -1,1 +1,10 @@
-{}
+{
+	"ContainerInbound": {
+		"type": "string",
+		"value": "inbound-landing-zone"
+	},
+	"ContainerBronze": {
+		"type": "string",
+		"value": "gold-layer"
+	}
+}
