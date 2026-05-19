@@ -76,6 +76,9 @@
 				"type": "string"
 			}
 		},
+		"folder": {
+			"name": "Control-table-Pl"
+		},
 		"annotations": [],
 		"lastPublishTime": "2026-05-17T02:27:55Z"
 	},
