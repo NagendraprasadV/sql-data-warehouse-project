@@ -1,6 +1,12 @@
 {
 	"name": "sql-dwh-adf",
 	"properties": {
+		"globalParameters": {
+			"ContainerInbound": {
+				"type": "string",
+				"value": "inbound-landing-zone"
+			}
+		},
 		"trustModeClaimForMi": {
 			"value": "Enabled",
 			"editable": true
