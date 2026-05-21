@@ -15,13 +15,13 @@ IF OBJECT_ID('bronze.crm_customer_info', 'U') IS NOT NULL
 GO
 
 CREATE TABLE bronze.crm_customer_info(
-    customer_id INT,
-    customer_key VARCHAR(50),
-    customer_first_name VARCHAR(50),
-    customer_last_name VARCHAR(50),
-    customer_material_status VARCHAR(50),
-    customer_gender VARCHAR(50),
-    customer_created_date DATE
+    cst_id              INT,
+    cst_key             NVARCHAR(50),
+    cst_firstname       NVARCHAR(50),
+    cst_lastname        NVARCHAR(50),
+    cst_marital_status  NVARCHAR(50),
+    cst_gndr            NVARCHAR(50),
+    cst_create_date     DATE
 );
 
 GO
@@ -32,13 +32,13 @@ IF OBJECT_ID('bronze.crm_product_info', 'U') IS NOT NULL
 GO
 
 CREATE TABLE bronze.crm_product_info(
-    product_id INT,
-    product_key VARCHAR(50),
-    product_name VARCHAR(50),
-    product_cost VARCHAR(50),
-    product_line VARCHAR(50),
-    product_start_date DATETIME,
-    product_end_date DATETIME
+    prd_id       INT,
+    prd_key      NVARCHAR(50),
+    prd_nm       NVARCHAR(50),
+    prd_cost     INT,
+    prd_line     NVARCHAR(50),
+    prd_start_dt DATETIME,
+    prd_end_dt   DATETIME
 );
 
 GO
@@ -50,15 +50,15 @@ GO
 
 
 CREATE TABLE bronze.crm_sales_details(
-    sales_order_num VARCHAR(50),
-    sales_product_key VARCHAR(50),
-    sales_customer_id INT,
-    sales_order_date INT,
-    sales_ship_date INT,
-    sales_due_date INT,
-    sales INT,
-    sales_quantity INT,
-    sales_price FLOAT,
+    sls_ord_num  NVARCHAR(50),
+    sls_prd_key  NVARCHAR(50),
+    sls_cust_id  INT,
+    sls_order_dt INT,
+    sls_ship_dt  INT,
+    sls_due_dt   INT,
+    sls_sales    INT,
+    sls_quantity INT,
+    sls_price    INT
 );
 
 GO
@@ -69,8 +69,8 @@ IF OBJECT_ID('bronze.erp_loc_a101', 'U') IS NOT NULL
 GO
 
 CREATE TABLE bronze.erp_loc_a101(
-    customer_key VARCHAR(50),
-    country VARCHAR(50)
+    cid    NVARCHAR(50),
+    cntry  NVARCHAR(50)
 );
 
 GO
@@ -81,9 +81,9 @@ IF OBJECT_ID('bronze.erp_customer_az12', 'U') IS NOT NULL
 GO
 
 CREATE TABLE bronze.erp_customer_az12(
-    customer_key VARCHAR(50),
-    dob DATE,
-    gender VARCHAR(50)
+    cid    NVARCHAR(50),
+    bdate  DATE,
+    gen    NVARCHAR(50)
 );
 
 GO
@@ -95,10 +95,10 @@ IF OBJECT_ID('bronze.erp_px_cat_g1v2', 'U') IS NOT NULL
 GO
 
 CREATE TABLE bronze.erp_px_cat_g1v2(
-    id VARCHAR(50),
-    cat VARCHAR(50),
-    subcat VARCHAR(50),
-    maintenance VARCHAR(50)
+    id           NVARCHAR(50),
+    cat          NVARCHAR(50),
+    subcat       NVARCHAR(50),
+    maintenance  NVARCHAR(50)
 );
 
 GO
